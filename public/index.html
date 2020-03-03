@@ -5,17 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
-    <p>Welcome to the chat app</p>
+<body class="chat">
+    <div class="chat__sidebar">
+        <h3>People</h3>
+        <div id="users"></div>
+        <h4 style="
+            margin: 10px 20px;
+            position: absolute;
+            bottom: 10px;
+            color: white;
+        "><span style="color: red; font-size: 20px;">M</span> &amp; <span style="color: red; font-size: 20px;">M</span> chat app</h4>
+    </div>
 
-    <ol id="messages"></ol>
+    <div class="chat__main">
+        <ol id="messages" class="chat__messages"></ol>
+    
+        <div class="chat__footer">
+            <form id="message-form">
+                <input name="message" type="text" placeholder="Type message here." autofocus autocomplete="off"/>
+                <button>Send</button>
+            </form>
+            <button id="send-location">Send location</button>
+        </div>
+    </div>
 
-    <form id="message-form">
-        <input name="message" type="text" placeholder="Type message here."/>
-        <button>Send</button>
-    </form>
-    <button id="send-location">Send location</button>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/libs/jquery-3.4.1.min.js"></script>
